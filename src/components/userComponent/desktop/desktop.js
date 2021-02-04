@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {fire} from "../../firebase";
 
-export const UserItem = ({user, initialCount, setInitialCount, firstName, lastName, countMobile}) =>{
+export const Desktop = ({user, initialCount, setInitialCount, firstName, lastName, countMobile}) =>{
 
 
     const handForCounter = () =>{

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {UserItem} from "./userItem";
+import {Desktop} from "./desktop";
 import {fire} from "../firebase";
 import {MobileComponent} from "./mobileComponent";
 
@@ -38,8 +38,8 @@ export const UserComponent = ({handLogout, user, firstName, lastName, size}) => 
                     size < 500 ? <MobileComponent user={user} initialCount={initialCount} firstName={firstName}
                                                   lastName={lastName}
                                                   countMobile={countMobile} setCountMobile={setCountMobile}/> :
-                        <UserItem user={user} initialCount={initialCount} setInitialCount={setInitialCount}
-                                  firstName={firstName} lastName={lastName} countMobile={countMobile}/>
+                        <Desktop user={user} initialCount={initialCount} setInitialCount={setInitialCount}
+                                 firstName={firstName} lastName={lastName} countMobile={countMobile}/>
                 }
             </div>
             <div>
