@@ -13,18 +13,20 @@ export const UserComponent = ({handLogout, user, firstName, lastName, size}) => 
         counterRef.on('value', function (count) {
             const data = count.val();
             console.log(data);
-            if(!data.initialCount){
-                setInitialCount(0)
-            }
-            if(!data.countMobile){
-                setCountMobile(0)
-            }
             if (!data) {
                 setInitialCount(0);
                 setCountMobile(0);
-            } else {
+            }
+
+            if(data){
                 setInitialCount(data.initialCount);
-                setCountMobile(data.countMobile)
+                setCountMobile(data.countMobile);
+                if(!data.initialCount){
+                    setInitialCount(0)
+                }
+                if(!data.countMobile){
+                    setCountMobile(0)
+                }
             }
         })
     }, []);
