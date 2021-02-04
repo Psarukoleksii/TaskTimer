@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {fire} from "../../firebase";
 
-export const Desktop = ({user, initialCount, setInitialCount, firstName, lastName, countMobile}) =>{
+export const Desktop = ({user, initialCount, setInitialCount, countMobile}) =>{
 
 
     const handForCounter = () =>{
@@ -12,8 +12,6 @@ export const Desktop = ({user, initialCount, setInitialCount, firstName, lastNam
 
     const writeUserData = () => {
         fire.database().ref(`counters/${user.uid}`).set({
-            userName: firstName,
-            userLastName: lastName,
             initialCount: initialCount,
             countMobile: countMobile,
         });

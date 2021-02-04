@@ -1,13 +1,11 @@
 import React, {useEffect} from 'react';
 import {fire} from "../../firebase";
 
-export const MobileComponent = ({user, initialCount, firstName, lastName, countMobile, setCountMobile}) =>{
+export const MobileComponent = ({user, initialCount, countMobile, setCountMobile}) =>{
 
     console.log(countMobile)
     const writeUserDataMobile = () =>{
         fire.database().ref(`counters/${user.uid}`).set({
-            userName: firstName,
-            userLastName: lastName,
             initialCount: initialCount,
             countMobile: countMobile,
         })

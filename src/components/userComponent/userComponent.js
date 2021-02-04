@@ -3,7 +3,7 @@ import {Desktop} from "./desktop";
 import {fire} from "../firebase";
 import {MobileComponent} from "./mobileComponent";
 
-export const UserComponent = ({handLogout, user, firstName, lastName, size}) => {
+export const UserComponent = ({handLogout, user, size}) => {
 
     const [initialCount, setInitialCount] = useState(null);
     const [countMobile, setCountMobile] = useState(null);
@@ -18,13 +18,13 @@ export const UserComponent = ({handLogout, user, firstName, lastName, size}) => 
                 setCountMobile(0);
             }
 
-            if(data){
+            if (data) {
                 setInitialCount(data.initialCount);
                 setCountMobile(data.countMobile);
-                if(!data.initialCount){
+                if (!data.initialCount) {
                     setInitialCount(0)
                 }
-                if(!data.countMobile){
+                if (!data.countMobile) {
                     setCountMobile(0)
                 }
             }
@@ -37,11 +37,10 @@ export const UserComponent = ({handLogout, user, firstName, lastName, size}) => 
             <p>Nice to meet you, {firstName} {lastName}</p>
             <div>
                 {
-                    size < 500 ? <MobileComponent user={user} initialCount={initialCount} firstName={firstName}
-                                                  lastName={lastName}
+                    size < 500 ? <MobileComponent user={user} initialCount={initialCount}
                                                   countMobile={countMobile} setCountMobile={setCountMobile}/> :
                         <Desktop user={user} initialCount={initialCount} setInitialCount={setInitialCount}
-                                 firstName={firstName} lastName={lastName} countMobile={countMobile}/>
+                                 countMobile={countMobile}/>
                 }
             </div>
             <div>

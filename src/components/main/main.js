@@ -89,7 +89,7 @@ export const Main = () => {
     };
 
 
-    const data = user ? <UserComponent handLogout={handLogout} user={user} firstName={firstName} lastName={lastName} size={size}/> :
+    const data = user ? <UserComponent handLogout={handLogout} user={user} size={size}/> :
         <MainItem email={email}
                   setEmail={setEmail}
                   password={password}
